@@ -12,6 +12,11 @@ module.exports = function(controller) {
                 //convo.next();
             //});
         });
+    });
 
+    controller.hears(['cya'], 'direct_message,direct_mention', function(bot, message) {
+        bot.startConversation(message, function(err, convo) {
+            convo.say('Cyaaaa')
+        });
     });
 }
