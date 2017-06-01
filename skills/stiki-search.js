@@ -1,8 +1,8 @@
 module.exports = function(controller) {
     controller.hears(['search'], 'direct_message,direct_mention', function(bot, message) {
         bot.startConversation(message, function(err, convo) {
-            const searchterm = message.text.replace('search ', '')
-            convo.say('OK, let\'s search for...' & searchterm)
+            const term = message.text.replace('search ', '')
+            convo.say('OK, let me search for...' & term)
 
             //convo.say('This is an example of using convo.ask with a single callback.');
 
